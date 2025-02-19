@@ -94,7 +94,6 @@ We are going first to run our terraform manually locally before we use GitHub Ac
 
 ```language
 terraform init
-
 ```
 Upon completion of the initialization process, a successful prompt will be displayed, as shown below.
 
@@ -106,7 +105,6 @@ Upon completion of the initialization process, a successful prompt will be displ
 
 ```language
 terraform validate
-
 ```
 
 The command should generate a success message, confirming that it is valid, as demonstrated below.
@@ -118,7 +116,6 @@ The command should generate a success message, confirming that it is valid, as d
 
 ```language
 terraform plan
-
 ```
 
 ![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/642512de8fb352865f29e9f283653ceefe9d7c1c/img/Screenshot%202025-02-19%20152205.png)
@@ -133,7 +130,6 @@ Note — Make sure to type “yes” to agree to the changes after running this 
 
 ```language
 terraform apply
-
 ```
 
 Terraform will initiate the process of applying all the changes to the infrastructure. Kindly wait for a few seconds for the deployment process to complete.
@@ -235,7 +231,6 @@ jobs:
       - name: Terraform Apply
         if: github.event_name == 'push'
         run: terraform apply -auto-approve
-
 ```
 
 4.3.Add AWS Credentials to GitHub Secrets
@@ -258,7 +253,6 @@ This ensures that sensitive Terraform state files and temporary files are not tr
 
 ```language
 nano .gitignore
-
 ```
 
 Then, paste the following content inside:
@@ -288,13 +282,11 @@ terraform.tfvars.json
 5.1 Now we will Commit and push your `.github/workflows/terraform-ci-cd.yml` file to GitHub:
 
 ```language
-
 git add .github/workflows/terraform-ci-cd.yml
 
 git commit -m "Add GitHub Actions workflow for Terraform"
 
 git push origin master
-
 ```
 
 
@@ -340,7 +332,6 @@ To
 ```language
 js
 "</h1>Hello, Welcome To Up The Chels Tech!<br>From Node.js App on EC2 Deployed Using GitHub Actions and Terraform!Your app has been updated!Your app has been updated</h1>
-
 ```
 
 
@@ -352,7 +343,6 @@ js
 we should run these commands:
 
 ```language
-
 sh
 
 git add main.tf
@@ -360,7 +350,6 @@ git add main.tf
 git commit -m "Update Node.js app message"
 
 git push origin main
-
 ```
 
 This will trigger GitHub Actions, which will run Terraform and update your EC2 instance.
@@ -374,17 +363,13 @@ Get the EC2 Public IP:
 
 ```language
 sh
-
 terraform output
-
 ```
 
 Test the app in your browser:
 
 ```language
-
 http://<EC2_PUBLIC_IP>:3000
-
 ```
 
 ![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/1a827ff3549a7eb4fbf96c9aa11af0853f5bd231/img/Screenshot%202025-02-19%20162747.png)
