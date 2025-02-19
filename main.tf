@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "tatenda-prince-my-terraform-ci-cd-bucket"
+  bucket ="ashley-my-terraform-ci-cd-bucket"
 }
 
 resource "random_id" "sg_suffix" {
