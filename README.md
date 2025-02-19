@@ -317,6 +317,39 @@ Once complete, your AWS infrastructure should be deployed automatically!
 ![image_alt]()
 
 
+## Step 6: Testing the CI/CD Pipeline by Updating the App
+
+We'll make a small change to the Node.js app, push it to GitHub, and check if the pipeline automatically deploys the update.
+
+6.1 Modify the Node.js App
+
+
+6.1.1.Open the Terraform user_data script inside main.tf.
+
+6.1.2.Find the echo command that creates app.js.
+
+6.1.3.Change the message from
+
+```language
+js
+"</h1>Hello, Welcome To Up The Chels Tech!<br>From Node.js App on EC2 Deployed Using GitHub Actions and Terraform!Your app has been updated</h1>
+```
+
+To
+
+```language
+js
+"</h1>Hello, Welcome To Up The Chels Tech!<br>From Node.js App on EC2 Deployed Using GitHub Actions and Terraform!Your app has been updated!Your app has been updated</h1>
+
+```
+
+
+
+
+
+
+
+
 
 
 
