@@ -309,7 +309,7 @@ Navigate to GitHub → Actions Tab in your repository.
 
 You should see your Terraform workflow running.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/665f9e3c86342c68aaac28136c94e5782749dde8/img/Screenshot%202025-02-19%20160806.png)
 
 
 Once complete, your AWS infrastructure should be deployed automatically!
