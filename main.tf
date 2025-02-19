@@ -42,7 +42,7 @@ resource "aws_instance" "web" {
   security_groups = [aws_security_group.ec2_sg1.name]  # Referencing the new security group with the unique name
 
   tags = {
-    Name        = "Node.jsWebServer"
+    Name = "Node.jsWebServer"  # This tag will be visible in the AWS Console
   }
 
   user_data = <<-EOF
@@ -59,7 +59,7 @@ resource "aws_instance" "web" {
               echo "const server = http.createServer((req, res) => {" >> app.js
               echo "  res.statusCode = 200;" >> app.js
               echo "  res.setHeader('Content-Type', 'text/plain');" >> app.js
-              echo "  res.end('Hello, Terraform CI/CD!\n');" >> app.js
+              echo "  res.end('Hello, Welcome to Up The Chelsea Tech!Terraform CI/CD!\n');" >> app.js
               echo "});" >> app.js
               echo "server.listen(3000, '0.0.0.0', () => {" >> app.js
               echo "  console.log('Server running on port 3000');" >> app.js
@@ -72,6 +72,7 @@ resource "aws_instance" "web" {
               pm2 save
               EOF
 }
+
 
 output "ec2_public_ip" {
   value = aws_instance.web.public_ip
