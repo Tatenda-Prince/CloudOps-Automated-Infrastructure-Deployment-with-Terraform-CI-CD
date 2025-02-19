@@ -324,9 +324,9 @@ We'll make a small change to the Node.js app, push it to GitHub, and check if th
 6.1 Modify the Node.js App
 
 
-6.1.1.Open the Terraform user_data script inside main.tf.
+6.1.1.Open the Terraform user_data script inside `main.tf`.
 
-6.1.2.Find the echo command that creates app.js.
+6.1.2.Find the echo command that creates `app.js`.
 
 6.1.3.Change the message from
 
