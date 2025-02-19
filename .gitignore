@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Ignore sensitive files
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+
+# Ignore logs and temporary files
+*.log
+*.bak
+
+# Ignore environment-specific configurations
+.env
+
