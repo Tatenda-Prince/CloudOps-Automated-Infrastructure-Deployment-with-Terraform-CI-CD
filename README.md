@@ -138,7 +138,7 @@ terraform apply
 
 Terraform will initiate the process of applying all the changes to the infrastructure. Kindly wait for a few seconds for the deployment process to complete.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/d2ed3db932708053ff1f45d878c4458abf3aea08/img/Screenshot%202025-02-19%20152532.png)
 
 ## Success!
 
