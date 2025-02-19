@@ -160,7 +160,7 @@ http://<EC2_PUBLIC_IP>:3000
 
 ```
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/00b876f04fda5d29856fb8d68ff34cabe901179f/img/Screenshot%202025-02-19%20153232.png)
 
 Our Node.js is Successfully running. 
 
