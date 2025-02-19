@@ -77,5 +77,15 @@ Using EC2 user data, the instance will:
 4.3.Ensure Node.js app is running on EC2
 
 
+## Step 1: Clone the Repository
+
+1.1.Clone this repository to your local machine
+
+```language
+git clone 
+
+```
+
+
    
 
