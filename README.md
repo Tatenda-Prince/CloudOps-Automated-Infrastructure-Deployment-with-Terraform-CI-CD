@@ -121,7 +121,7 @@ terraform plan
 
 ```
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/642512de8fb352865f29e9f283653ceefe9d7c1c/img/Screenshot%202025-02-19%20152205.png)
 
 
 The list of changes that Terraform is anticipated to apply to the infrastructure resources should be displayed. The “+” sign indicates what will be added, while the “-” sign indicates what will be removed.
