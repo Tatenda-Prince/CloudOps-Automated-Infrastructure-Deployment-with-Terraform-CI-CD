@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "tatenda-my-terraform-ci-cd-bucket"
+  bucket = "tatenda-prince-my-terraform-ci-cd-bucket"
  
 }
 
-resource "aws_security_group" "ec2_sg" {
+resource "aws_security_group" "ec2_sg1" {
   name        = "ec2_security_group"
   description = "Allow inbound HTTP and SSH access"
 
