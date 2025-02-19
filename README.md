@@ -387,7 +387,7 @@ http://<EC2_PUBLIC_IP>:3000
 
 ```
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/1a827ff3549a7eb4fbf96c9aa11af0853f5bd231/img/Screenshot%202025-02-19%20162747.png)
 
 
 ## Future Enhancements
