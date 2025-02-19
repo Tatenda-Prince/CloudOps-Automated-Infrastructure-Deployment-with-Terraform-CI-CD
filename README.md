@@ -314,7 +314,7 @@ You should see your Terraform workflow running.
 
 Once complete, your AWS infrastructure should be deployed automatically!
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/5eeb9ed86b9cccd5a09867142bd358fdd4ffc830/img/Screenshot%202025-02-19%20160841.png)
 
 
 ## Step 6: Testing the CI/CD Pipeline by Updating the App
