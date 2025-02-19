@@ -35,7 +35,7 @@ This project demonstrates how to create a CI/CD pipeline for AWS infrastructure 
 
 ## Project Setup & Deployment
 
-1.Terraform Code for AWS Infrastructure
+## Terraform Code for AWS Infrastructure
 
 The Terraform scripts provision:
 
@@ -48,7 +48,7 @@ The Terraform scripts provision:
 1.4.Security Groups (to manage inbound/outbound traffic)
 
 
-2.Deploy a Node.js App on EC2
+## Deploy a Node.js App on EC2
 
 Using EC2 user data, the instance will:
 
@@ -59,14 +59,14 @@ Using EC2 user data, the instance will:
 2.3.Start the application automatically
 
 
-3.Set Up GitHub Actions for CI/CD
+## Set Up GitHub Actions for CI/CD
 
 3.1.Terraform Plan & Apply on push to main
 3.2.Automated deployment to AWS
 3.4.gitignore and GitHub Actions YAML configured for security
 
 
-4.Test & Validate
+## Test & Validate
 
 4.1.Push code changes to GitHub
 4.2.Verify AWS infrastructure deployment
