@@ -144,7 +144,7 @@ Terraform will initiate the process of applying all the changes to the infrastru
 
 The process should now conclude with a message indicating “Apply complete”, stating the total number of added, modified, and destroyed resources, accompanied by several resources.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/7e56b06480851e8ab4c630afd390f6ff61b37517/img/Screenshot%202025-02-19%20153101.png)
 
 
 ## Step 3: Verify if The EC2 instance is running a Node.js app
