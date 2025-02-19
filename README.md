@@ -167,6 +167,171 @@ Our Node.js is Successfully running.
 
 ## Step 4: Lets Configure GitHub Actions for Automation
 
+4.We'll create a GitHub Actions workflow to:
+
+Initialize Terraform (`terraform init`)
+
+Plan changes (`terraform plan`)
+
+Apply changes automatically (`terraform apply`)
+
+4.1.Create a `.github/workflows` Directory
+
+Inside your project repository, create a new directory:
+
+```language
+mkdir -p .github/workflows
+```
+
+4.2. Create `terraform-ci-cd.ym`l File
+
+Now, inside `.github/workflows/`, create a new file called `terraform-ci-cd.yml`:
+
+copy paste the yaml file below 
+
+
+```yaml
+name: Terraform AWS Deployment with Access Keys
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    name: Terraform Apply
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.0
+
+      - name: Configure AWS Credentials (Using GitHub Secrets)
+        run: |
+          mkdir -p ~/.aws
+          echo "[default]" > ~/.aws/credentials
+          echo "aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" >> ~/.aws/credentials
+          echo "aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
+          echo "region=us-east-1" > ~/.aws/config
+
+      - name: Initialize Terraform
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Terraform Apply
+        if: github.event_name == 'push'
+        run: terraform apply -auto-approve
+
+```
+
+4.3.Add AWS Credentials to GitHub Secrets
+
+4.3.1.To allow GitHub Actions to deploy to AWS securely, set up AWS Secrets:
+
+4.3.2.Go to your GitHub repository.
+
+4.3.3.Navigate to: `Settings` → `Secrets `and `variables `→ `Actions` → `New Repository Secret`.
+
+Add:
+
+`AWS_ACCESS_KEY_ID`
+
+`AWS_SECRET_ACCESS_KEY`
+
+4.4.Create the `.gitignore` File
+
+This ensures that sensitive Terraform state files and temporary files are not tracked in Git.
+
+```language
+nano .gitignore
+
+```
+
+Then, paste the following content inside:
+
+```language
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Ignore sensitive files
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+
+# Ignore logs and temporary files
+*.log
+*.bak
+
+# Ignore environment-specific configurations
+.env
+```
+
+## Step 5: Let push the changes 
+
+5.1 Now we will Commit and push your `.github/workflows/terraform-ci-cd.yml` file to GitHub:
+
+```language
+
+git add .github/workflows/terraform-ci-cd.yml
+
+git commit -m "Add GitHub Actions workflow for Terraform"
+
+git push origin master
+
+```
+
+
+5.2 This will trigger a Workflow 
+
+After pushing the code:
+
+Navigate to GitHub → Actions Tab in your repository.
+
+![iamge_alt]()
+
+
+You should see your Terraform workflow running.
+
+![image_alt]()
+
+
+Once complete, your AWS infrastructure should be deployed automatically!
+
+![image_alt]()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
