@@ -4,7 +4,6 @@ provider "aws" {
 
 resource "aws_s3_bucket" "my_bucket" {
   bucket = "tatenda-prince-my-terraform-ci-cd-bucket"
- 
 }
 
 resource "aws_security_group" "ec2_sg1" {
@@ -36,7 +35,7 @@ resource "aws_security_group" "ec2_sg1" {
 resource "aws_instance" "web" {
   ami           = "ami-053a45fff0a704a47"  # Amazon Linux 2 AMI (replace with latest)
   instance_type = "t2.micro"
-  security_groups = [aws_security_group.ec2_sg.name]
+  security_groups = [aws_security_group.ec2_sg1.name]  # Updated to ec2_sg1
 
   user_data = <<-EOF
               #!/bin/bash
