@@ -344,6 +344,71 @@ js
 ```
 
 
+6.1.4.Save the file.
+
+
+6.2.1.Commit and Push the Changes
+
+we should run these commands:
+
+```language
+
+sh
+
+git add main.tf
+
+git commit -m "Update Node.js app message"
+
+git push origin main
+
+```
+
+This will trigger GitHub Actions, which will run Terraform and update your EC2 instance.
+
+
+6.2.2.Check the Deployment
+
+6.2.3.Navigate  to GitHub → Actions tab and check if the workflow runs successfully.
+
+Get the EC2 Public IP:
+
+```language
+sh
+
+terraform output
+
+```
+
+Test the app in your browser:
+
+```language
+
+http://<EC2_PUBLIC_IP>:3000
+
+```
+
+![image_alt]()
+
+
+## Future Enhancements
+
+
+ 1.Implement multi-environment (dev/staging/prod) deployment
+ 
+ 2.Add monitoring with AWS CloudWatch
+ 
+ 3.Automate rollbacks for failed deployments
+
+
+ ## Congratulations
+
+We successfully provisioned AWS resources using Terraform, including an EC2 instance for hosting a Node.js application, an S3 bucket for storage, and IAM roles with security groups for access control. The deployment process was fully automated using GitHub Actions, enabling continuous integration and deployment with secure authentication via AWS secrets (IAM Access Keys or OIDC). Finally, we tested the CI/CD pipeline by modifying the Node.js application, ensuring automatic deployment of updates and seamless infrastructure changes through Terraform.
+
+
+
+
+
+
 
 
 
