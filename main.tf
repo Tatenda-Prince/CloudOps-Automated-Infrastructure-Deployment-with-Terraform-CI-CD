@@ -59,7 +59,7 @@ resource "aws_instance" "web" {
               echo "const server = http.createServer((req, res) => {" >> app.js
               echo "  res.statusCode = 200;" >> app.js
               echo "  res.setHeader('Content-Type', 'text/html');" >> app.js
-              echo "  res.end('<h1 style=\"font-size:30px; text-align:center;\">Hello, Welcome To Up The Chels Tech!<br>From Node.js App on EC2 Deployed Using GitHub Actions and Terraform!Your app has been updated🎉</h1>');" >> app.js
+              echo "  res.end('<h1 style=\"font-size:30px; text-align:center;\">Hello, Welcome To Up The Chels Tech!<br>From Node.js App on EC2 Deployed Using GitHub Actions and Terraform!Your app has been updated</h1>');" >> app.js
               echo "});" >> app.js
               echo "server.listen(3000, '0.0.0.0', () => {" >> app.js
               echo "  console.log('Server running on port 3000');" >> app.js
