@@ -304,7 +304,7 @@ After pushing the code:
 
 Navigate to GitHub → Actions Tab in your repository.
 
-![iamge_alt]()
+![iamge_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/9505eaae16347c175bedc31be19436db9eade67d/img/Screenshot%202025-02-19%20160728.png)
 
 
 You should see your Terraform workflow running.
