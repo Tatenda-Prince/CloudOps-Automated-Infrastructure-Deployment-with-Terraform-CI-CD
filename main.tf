@@ -6,8 +6,12 @@ resource "aws_s3_bucket" "my_bucket" {
   bucket = "tatenda-prince-my-terraform-ci-cd-bucket"
 }
 
+resource "random_id" "sg_suffix" {
+  byte_length = 8  # Generate an 8-byte random string to append to the security group name
+}
+
 resource "aws_security_group" "ec2_sg1" {
-  name        = "ec2_security_group_unique"  # Updated to a unique name
+  name        = "ec2_security_group_${random_id.sg_suffix.hex}"  # Use random suffix to ensure uniqueness
   description = "Allow inbound HTTP and SSH access"
 
   ingress {
@@ -35,13 +39,11 @@ resource "aws_security_group" "ec2_sg1" {
 resource "aws_instance" "web" {
   ami           = "ami-053a45fff0a704a47"  # Amazon Linux 2 AMI (replace with latest)
   instance_type = "t2.micro"
-  security_groups = [aws_security_group.ec2_sg1.name]  # Updated to ec2_sg1
+  security_groups = [aws_security_group.ec2_sg1.name]  # Referencing the new security group with the unique name
 
   tags = {
     Name        = "Node.jsWebServer"
-    
   }
-
 
   user_data = <<-EOF
               #!/bin/bash
@@ -70,8 +72,6 @@ resource "aws_instance" "web" {
               pm2 save
               EOF
 }
-
-
 
 output "ec2_public_ip" {
   value = aws_instance.web.public_ip
