@@ -151,7 +151,7 @@ The process should now conclude with a message indicating “Apply complete”, 
 
 3.1.In the AWS Management Console, head to the Amazon EC2 dashboard and verify that the instance  was successfully created.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/5ff47f4a767d04978cef9623e3f1679799ee48c5/img/Screenshot%202025-02-19%20153156.png)
 
 3.2.Now lets test the Node.js app.find the EC2 Public IP from Terraform output and open in a browser:
 
