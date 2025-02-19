@@ -62,14 +62,18 @@ Using EC2 user data, the instance will:
 ## Set Up GitHub Actions for CI/CD
 
 3.1.Terraform Plan & Apply on push to main
+
 3.2.Automated deployment to AWS
+
 3.4.gitignore and GitHub Actions YAML configured for security
 
 
 ## Test & Validate
 
 4.1.Push code changes to GitHub
+
 4.2.Verify AWS infrastructure deployment
+
 4.3.Ensure Node.js app is running on EC2
 
 
