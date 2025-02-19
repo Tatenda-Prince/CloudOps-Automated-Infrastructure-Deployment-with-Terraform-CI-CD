@@ -37,6 +37,12 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
   security_groups = [aws_security_group.ec2_sg1.name]  # Updated to ec2_sg1
 
+  tags = {
+    Name        = "Node.jsWebServer"
+    
+  }
+
+
   user_data = <<-EOF
               #!/bin/bash
               yum update -y
@@ -64,6 +70,8 @@ resource "aws_instance" "web" {
               pm2 save
               EOF
 }
+
+
 
 output "ec2_public_ip" {
   value = aws_instance.web.public_ip
