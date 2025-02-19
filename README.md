@@ -2,7 +2,7 @@
 
 ## Technical Architecture
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/terraform-aws-cicd/blob/af892a51ef107bd632bcd3192765e641db159a8e/img/Screenshot%202025-02-19%20165839.png)
 
 
 ## Project Overview
