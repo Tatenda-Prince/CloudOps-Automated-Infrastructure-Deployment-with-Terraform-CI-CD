@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "my_bucket" {
 }
 
 resource "aws_security_group" "ec2_sg1" {
-  name        = "ec2_security_group"
+  name        = "ec2_security_group_unique"  # Updated to a unique name
   description = "Allow inbound HTTP and SSH access"
 
   ingress {
