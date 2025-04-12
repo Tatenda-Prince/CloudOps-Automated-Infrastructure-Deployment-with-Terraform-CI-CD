@@ -1,4 +1,4 @@
-# CloudOps Automated Infrastructure Deployment with Terraform & CI/CD
+# Automated Infrastructure Deployment with Terraform & CI/CD
 
 ## Technical Architecture
 
